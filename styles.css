@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Couleur */
+    --beige: #DCC3AA;
+    --marron: #9D6638;
+    --marron-fonce: #1F150C; 
+    --gris: #F4F4F4;
+    --white: 
+}
