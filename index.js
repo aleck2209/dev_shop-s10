@@ -25,11 +25,11 @@ const displayProducts = async () => {
             </figure>
             <div class="text-container-product">
                 <div class="price-category-container">
-                    <p class="price-card">${item.price}</p>
+                    <p class="price-card">$${item.price}</p>
                     <span class="category-card">${item.category}</span>
                 </div>
                 <p class="title-card">${item.title}</p>
-                <p class="description-card">${item.description}</p>
+                <p class="description-card">${item.description.substring(0, 100)}...</p>
             <div/>
         </article>
     `).join('')

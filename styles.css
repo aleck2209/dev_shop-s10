@@ -1,16 +1,154 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    /* Couleur */
-    --beige: #DCC3AA;
-    --marron: #9D6638;
-    --marron-fonce: #1F150C; 
-    --gris: #F4F4F4;
-    --white: 
+  /* Couleur */
+  --beige: #dcc3aa;
+  --marron: #9d6638;
+  --marron-fonce: #1f150c;
+  --gris: #fafafa;
+  --gris-fonce: #eee;
+  --white: #fff;
+
+  /* Typographie */
+  /* Font-Size */
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-base: 16px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-2xl: 32px;
+  --font-3xl: 48px;
+
+  /* Font-Weight */
+  --font-thin: 100;
+  --font-extra-light: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --font-extra-bold: 800;
+  --font-black: 900;
+
+  /* Spacing 1rem --> 16px*/
+  --spacing-none: 0;
+  --spacing-2xs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3rem; /* 48px */
+  --spacing-4xl: 4rem; /* 64px */
+  --spacing-5xl: 5rem; /* 80px */
+  --spacing-6xl: 6rem; /* 96px */
+  --spacing-7xl: 8rem; /* 128px */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--white);
+}
+
+.main {
+  padding: 0 var(--spacing-md);
+}
+
+.products {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  justify-items: center;
+}
+
+.card-product {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 250px;
+}
+
+.img-container {
+  background: linear-gradient(
+    to right,
+    var(--gris) 0%,
+    var(--gris) 60%,
+    var(--gris-fonce) 100%
+  );
+  padding: var(--spacing-md);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-article {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.text-container-product {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.price-category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-card {
+  font-size: var(--font-lg);
+  font-weight: var(--font-black);
+  color: var(--marron-fonce);
+}
+
+.category-card {
+  font-family: "outfit", sans-serif;
+  font-size: var(--font-xs);
+  padding: 0.4em 1em;
+  color: var(--marron-fonce);
+  background-color: var(--beige);
+  border-radius: 20px;
+}
+
+.title-card {
+  font-size: var(--font-sm);
+  font-weight: var(--font-semi-bold);
+  color: var(--marron-fonce);
+}
+
+.description-card {
+  font-size: var(--font-xs);
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    padding: 0 var(--spacing-4xl);
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
