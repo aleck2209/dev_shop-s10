@@ -22,10 +22,13 @@
     <header class="header">
       <h1>DevShop</h1>
       <!-- Recherche article -->
-      <section class="rechercher">
-        <input type="search" name="input-search" id="input-search" placeholder="Rechercher...">
-        <button type="button">Rechercher</button>
-      </section>
+      <input
+        type="search"
+        name="input-search"
+        id="input-search"
+        placeholder="Rechercher..."
+      />
+      <!-- Panier d'achat -->
       <button type="button"><i class="fa-solid fa-cart-shopping"></i></button>
     </header>
 
@@ -34,12 +37,18 @@
         <h2>Produits</h2>
         <!-- Bouton de filtre -->
         <section class="btn-filter">
-          <button type="button" id="mens-clothes">Vêtements hommes</button>
-          <button type="button" id="women-clothes">Vêtements femmes</button>
-          <button type="button" id="jewels">bijoux</button>
-          <button type="button" >Electroniques</button>
+          <button type="button" id="mens-clothes" name="men's clothing">
+            Vêtements hommes
+          </button>
+          <button type="button" id="womens-clothes" name="women's clothing">
+            Vêtements femmes
+          </button>
+          <button type="button" id="jewels" name="jewelery">bijoux</button>
+          <button type="button" id="electronics" name="electronics">
+            Electroniques
+          </button>
         </section>
-        
+
         <section id="products" class="block"></section>
       </section>
     </main>
