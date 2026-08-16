@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cloudflare.com" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,9 +18,30 @@
     <title>Shop</title>
   </head>
   <body>
-    <header></header>
+    <!-- Header -->
+    <header class="header">
+      <h1>DevShop</h1>
+      <!-- Recherche article -->
+      <section class="rechercher">
+        <input type="search" name="input-search" id="input-search" placeholder="Rechercher...">
+        <button type="button">Rechercher</button>
+      </section>
+      <button type="button"><i class="fa-solid fa-cart-shopping"></i></button>
+    </header>
+
     <main class="main">
-      <section id="products" class="products"></section>
+      <section>
+        <h2>Produits</h2>
+        <!-- Bouton de filtre -->
+        <section class="btn-filter">
+          <button type="button" id="mens-clothes">Vêtements hommes</button>
+          <button type="button" id="women-clothes">Vêtements femmes</button>
+          <button type="button" id="jewels">bijoux</button>
+          <button type="button" >Electroniques</button>
+        </section>
+        
+        <section id="products" class="block"></section>
+      </section>
     </main>
     <footer></footer>
 

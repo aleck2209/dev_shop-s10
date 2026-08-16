@@ -6,6 +6,8 @@
   padding: 0;
 }
 
+
+/* Variable */
 :root {
   /* Couleur */
   --beige: #dcc3aa;
@@ -52,6 +54,7 @@
   --spacing-7xl: 8rem; /* 128px */
 }
 
+/* Styles générals */
 body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--white);
@@ -61,9 +64,48 @@ body {
   padding: 0 var(--spacing-md);
 }
 
+/* Section produits */
+/* Chargement */
+.block {
+  padding: var(--spacing-7xl) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  font-weight: var(--font-semi-bold);
+  animation: loading 1.2s ease-in-out infinite
+}
+
+@keyframes loading {
+  0% {
+    color: var(--gris-fonce);
+    transform: scale(1);
+  }
+
+  50% {
+    color: var(--marron-fonce);
+    transform: scale(1.1);
+  }
+  
+  100% {
+    color: var(--gris-fonce);
+    transform: scale(1);
+  }
+}
+
+/* Erreur de chargement */
+.error {
+  color: var(--marron-fonce);
+  font-size: var(--font-base);
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5;
+}
+
 .products {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1024px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -137,6 +179,7 @@ body {
   font-size: var(--font-xs);
 }
 
+/* Media pour la tablette */
 @media only screen and (min-width: 768px) {
   .main {
     padding: 0 var(--spacing-4xl);
@@ -147,6 +190,7 @@ body {
   }
 }
 
+/* Media pour le pc */
 @media only screen and (min-width: 1024px) {
   .products {
     grid-template-columns: repeat(3, 1fr);
