@@ -29,7 +29,10 @@
         placeholder="Rechercher..."
       />
       <!-- Panier d'achat -->
-      <button type="button"><i class="fa-solid fa-cart-shopping"></i></button>
+      <section>
+        <span id="compteur"></span>
+        <button type="button"><i class="fa-solid fa-cart-shopping"></i></button>
+      </section>
     </header>
 
     <main class="main">
@@ -37,6 +40,7 @@
         <h2>Produits</h2>
         <!-- Bouton de filtre -->
         <section class="btn-filter">
+          <button type="button" id="all">Tous</button>
           <button type="button" id="mens-clothes" name="men's clothing">
             Vêtements hommes
           </button>

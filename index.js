@@ -2,12 +2,17 @@
 const baseUrl = "https://fakestoreapi.com";
 const sectionProducts = document.getElementById("products");
 // Bouton categorie
+const allProducts = document.getElementById('all')
 const menClothe = document.getElementById("mens-clothes");
 const womenClothe = document.getElementById("womens-clothes");
 const jewel = document.getElementById("jewels");
 const electronic = document.getElementById("electronics");
 // Input recherche
 const inputSearch = document.getElementById("input-search");
+// Compteur
+const compteur = document.getElementById('compteur')
+// Tableau cart
+let cart = [];
 
 // Recupérer les produits
 const getProducts = async () => {
@@ -19,6 +24,20 @@ const getProducts = async () => {
   const data = response.json();
   return data;
 };
+
+// Mettre à jour le compteur
+const updateCompteur = () => {
+  compteur.textContent = cart.length;
+}
+
+// Ajouter un produit à la cart
+const addToCart = (product) => {
+  cart.push(product);
+
+  updateCompteur();
+
+  console.log(cart);
+}
 
 // Affichage des produit
 const displayProducts = (products) => {
@@ -39,11 +58,23 @@ const displayProducts = (products) => {
                   <p class="title-card">${item.title}</p>
                   <p class="description-card">${item.description.substring(0, 100)}...</p>
               <div/>
+              <button type="button" class="btn-add-cart" data-id="${item.id}">Ajouter au panier</button>
           </article>
         `,
     )
     .join("");
-};
+
+    // Evenement pour ajouter produit à la carte
+    const cartButtons = document.querySelectorAll('.btn-add-cart');
+    cartButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        const buttonId = Number(event.target.dataset.id);
+        const product = products.find(item => item.id === buttonId);
+
+        addToCart(product);
+      });
+    });
+}
 
 // Fonction filtre des produits par categories
 const filterProducts = (products, category) => {
@@ -72,47 +103,51 @@ const loadProducts = async () => {
     displayProducts(data);
 
     // Filtre par category
+    allProducts.addEventListener('click', () => {
+      displayProducts(data);
+    })
+
     menClothe.addEventListener('click', (event) => {
       const category = event.target.name;
       const products = filterProducts(data, category);
       
-      displayProducts(products)
-    })
+      displayProducts(products);
+    });
 
     womenClothe.addEventListener('click', (event) => {
       const category = event.target.name;
       const products = filterProducts(data, category);
       
-      displayProducts(products)
-    })
+      displayProducts(products);
+    });
 
     jewel.addEventListener('click', (event) => {
       const category = event.target.name;
       const products = filterProducts(data, category);
       
-      displayProducts(products)
-    })
+      displayProducts(products);
+    });
 
     electronic.addEventListener('click', (event) => {
       const category = event.target.name;
       const products = filterProducts(data, category);
       
-      displayProducts(products)
-    })
+      displayProducts(products);
+    });
 
     // Recherche par titre
     inputSearch.addEventListener('input', (event) => {
       const searchValue = event.target.value.trim()
       const products = searchProducts(data, searchValue);
 
-      displayProducts(products)
-    })
+      displayProducts(products);
+    });
 
   } catch (error) {
     console.log(error);
 
     sectionProducts.innerHTML = `<p class="error">Impossible de charger les produits.<br>Veuillez vérifier votre connexion et réessayer.</p>`;
   }
-};
+}
 
 loadProducts()
