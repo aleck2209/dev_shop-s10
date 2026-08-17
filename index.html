@@ -29,9 +29,11 @@
         placeholder="Rechercher..."
       />
       <!-- Panier d'achat -->
-      <section>
+      <section class="cart-section">
         <span id="compteur"></span>
-        <button type="button"><i class="fa-solid fa-cart-shopping"></i></button>
+        <button type="button" id="btn-cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
       </section>
     </header>
 
@@ -55,8 +57,40 @@
 
         <section id="products" class="block"></section>
       </section>
+
+      <aside id="cart-tiroir" class="cart-tiroir">
+        <header class="cart-header">
+          <h2>Panier d'achat</h2>
+          <button type="button" id="close-cart">
+            <i class="fa-solid fa-x"></i>
+          </button>
+        </header>
+        <section id="cart-content">
+          <p>Total :<span id="cart-total"></span></p>
+        </section>
+        <footer class="cart-footer"></footer>
+      </aside>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2>DevShop</h2>
+          <p>Retrouvez vos produits préférés simplement et rapidement.</p>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+
+          <a href="mailto:contact@devshop.com"> contact@devshop.com </a>
+
+          <a href="tel:+242060000000"> +242 06 430 20 20 </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DevShop. Tous droits réservés.</p>
+      </div>
+    </footer>
 
     <!--  -->
     <script src="index.js"></script>
